@@ -1,4 +1,4 @@
-# RobinFood - Pizza Store
+# Pizza | RobinFood frontend Technical test
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 

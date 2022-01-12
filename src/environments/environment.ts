@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  DATA_URL: 'https://pruebas-muy-candidatos.s3.us-east-2.amazonaws.com/RH.json'
 };
 
 /*

@@ -1,0 +1,17 @@
+{
+    "LOGIN": {
+        "MAIN_TITLE": "Bienvenido",
+        "DESCRIPTION_SITE": "A las mejores pizzas del país",
+        "USER": "Usuario",
+        "PASSWORD": "Contraseña",
+        "FORGET_PASSWORD": "¿Olvidaste tu contraseña?",
+        "BUTTON_LOGIN": "Iniciar sesión",
+        "ERROR_MESSAGE": "Los datos de usuario son incorrectos"
+    },
+    "PRODUCT_LIST": {
+        "BREADCRUMB": "Pizzerías",
+        "MAIN_TITLE": "Tiendas",
+        "DESCRIPTION_SITE": "Escoge tu pizzería favorita",
+        "LOGOUT": "Salir"
+    }
+}

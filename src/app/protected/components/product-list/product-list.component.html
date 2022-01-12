@@ -1,0 +1,29 @@
+<div class="products-list">
+    <header class="products-list__header">
+        <button (click)="logout()">{{ 'PRODUCT_LIST.LOGOUT' | translate }}</button>
+    </header>
+    
+    <section class="product-list__breadcrumb">{{ 'PRODUCT_LIST.BREADCRUMB' | translate }}</section>
+    <section class="product-list__title">
+        <h2>{{ 'PRODUCT_LIST.MAIN_TITLE' | translate }}</h2>
+        <p>{{ 'PRODUCT_LIST.DESCRIPTION_SITE' | translate }}</p>
+    </section>
+    
+    <ul class="product-list__list" *ngFor="let store of stores">
+        <li class="product-list__list__item" (click)="openDetails(store.id)">
+            <img src="../../../../assets/images/stores/{{ store.image }}" alt="">
+            <h4>{{ store.name }}</h4>
+            <small>{{ store.address }}</small>
+        </li>
+    </ul>
+</div>
+
+<div id="modal-product" class="modal-product" *ngIf="modalVisible">
+    <span class="modal-product__close" (click)="closeModal()">X</span>
+    <section class="modal-product__wrap">
+        <header>{{ store.name }}</header>
+        <ul *ngFor="let product of store.products">
+            <li>{{ product.name }}</li>
+        </ul>
+    </section>
+</div>
