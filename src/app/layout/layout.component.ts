@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,19 +6,10 @@ import { Router } from '@angular/router';
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss']
 })
-export class LayoutComponent implements OnInit {
+export class LayoutComponent {
 
   public isLogin: boolean = false;
 
-  constructor(private router: Router) { }
-
-
-  ngOnInit(): void {
-    this.getCurrentUrl();
-  }
-
-  private getCurrentUrl(): void {
-    this.router.url === '/login' ? this.isLogin = true : this.isLogin = false;
-  }
+  constructor(public router: Router) { }
 
 }

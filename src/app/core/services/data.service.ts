@@ -11,7 +11,6 @@ import { UserInterface } from '../interfaces/user.interface';
 export class DataService {
 
   private apiUrl = `${environment.DATA_URL}`;
-  public users: UserInterface[] = [];
 
   constructor(private httpClient: HttpClient) { }
 
