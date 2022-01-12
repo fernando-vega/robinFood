@@ -1,0 +1,35 @@
+<section class="login__wrap row center-xs">
+    <header>
+        <img src="../../../../assets/images/logo-login.png" loading="lazy" alt="Logo Best Pizza">
+        <h2>{{ 'LOGIN.MAIN_TITLE' | translate }}</h2>
+        <p>{{ 'LOGIN.DESCRIPTION_SITE' | translate }}</p>
+    </header>
+    <form class="login__form"
+          action=""
+          [formGroup]="loginForm"
+          (ngSubmit)="login()">
+        <div class="login__form__group">
+            <input type="text"
+                   formControlName="email"
+                   placeholder="{{ 'LOGIN.USER' | translate }}">
+                   <span class="focus-border">
+                        <i></i>
+                    </span>
+        </div>
+        <div class="login__form__group">
+            <input type="password"
+                   formControlName="password"
+                   placeholder="{{ 'LOGIN.PASSWORD' | translate }}">
+                   <span class="focus-border">
+                        <i></i>
+                    </span>
+        </div>
+        <a class="login__form__link" href="">{{ 'LOGIN.FORGET_PASSWORD' | translate }}</a>
+        <span class="login__form__error-message" *ngIf="loggedIn">
+            {{ 'LOGIN.ERROR_MESSAGE' | translate }}
+        </span>
+        <button type="submit"
+                [disabled]="loginForm.invalid"
+                class="btn btn__primary">{{ 'LOGIN.BUTTON_LOGIN' | translate }}</button>
+    </form>
+</section>

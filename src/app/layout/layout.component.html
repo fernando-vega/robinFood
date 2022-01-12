@@ -1,0 +1,8 @@
+<div class="main-container row">
+    <section class="left-section row col-xs-12" [ngClass]="isLogin ? 'col-sm-6' : 'col-sm-4'">
+        <img src="../../assets/images/Pizza.png" loading="lazy" alt="Pizza">
+    </section>
+    <section class="right-section row col-xs-12" [ngClass]="isLogin ? ' col-sm-6' : 'col-sm-8'">
+        <router-outlet></router-outlet>
+    </section>
+</div>

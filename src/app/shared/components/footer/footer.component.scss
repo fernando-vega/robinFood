@@ -1,0 +1,27 @@
+@import 'src/scss/vars';
+
+.main-footer {
+    background-color: $black;
+    margin: 2rem -2rem -2rem;
+    padding: 1rem 4rem;
+    &__social-icons{
+        a {
+            margin: .5rem;
+            color: $white;
+            text-decoration: none;
+            transition: color .3s ease-in-out;
+            &:hover {
+                color: $mainColor;
+            }
+        }
+    }
+    &__logo {
+        img {
+            padding-top: 2rem;
+            width: 50px;
+            @include for-tablet-portrait-up {
+                padding: initial;
+            }
+        }
+    }
+}
