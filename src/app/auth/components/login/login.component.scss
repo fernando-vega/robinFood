@@ -1,0 +1,148 @@
+@import 'src/scss/vars';
+
+.login {
+  &__wrap {
+    header {
+      padding: 2rem;
+
+      img {
+        max-width: 50%;
+      }
+
+      h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 3rem;
+      }
+
+      p {
+        color: $gray;
+      }
+    }
+  }
+
+  &__form {
+    width: calc(100% - 2rem);
+
+    &__group {
+        position: relative;
+        input {
+            background-color: transparent;
+            border: 1px solid $gray;
+            margin: .2rem 0;
+            padding: 0.85rem .5rem;
+            position: relative;
+            outline: none;
+            width: calc(100% - 1.2rem);
+          
+            ~ .focus-border {
+              &:before {
+                content: "";
+                position: absolute;
+                top: 3px;
+                right: 0;
+                width: 0;
+                height: 2px;
+                background-color: $mainColor;
+                transition: 0.2s;
+                transition-delay: 0.2s;
+              }
+          
+              &:after {
+                content: "";
+                position: absolute;
+                top: 3px;
+                right: 0;
+                width: 0;
+                height: 2px;
+                background-color: $mainColor;
+                transition: 0.2s;
+                transition-delay: 0.2s;
+                top: auto;
+                bottom: 3px;
+                right: auto;
+                left: 0;
+                transition-delay: 0.6s;
+              }
+          
+              i {
+                &:before {
+                  content: "";
+                  position: absolute;
+                  top: 4px;
+                  left: 0;
+                  width: 2px;
+                  height: 0;
+                  background-color: $mainColor;
+                  transition: 0.2s;
+                }
+          
+                &:after {
+                  content: "";
+                  position: absolute;
+                  top: 4px;
+                  left: 0;
+                  width: 2px;
+                  height: 0;
+                  background-color: $mainColor;
+                  transition: 0.2s;
+                  left: auto;
+                  right: 0;
+                  top: auto;
+                  bottom: 3px;
+                  transition-delay: 0.4s;
+                }
+              }
+            }
+          
+            &:focus ~ .focus-border {
+              &:before {
+                width: 100%;
+                transition: 0.2s;
+                transition-delay: 0.6s;
+              }
+          
+              &:after {
+                width: 100%;
+                transition: 0.2s;
+                transition-delay: 0.6s;
+                transition-delay: 0.2s;
+              }
+          
+              i {
+                &:before {
+                  height: 85%;
+                  transition: 0.2s;
+                }
+          
+                &:after {
+                  height: 85%;
+                  transition: 0.2s;
+                  transition-delay: 0.4s;
+                }
+              }
+            }
+          }
+    }
+
+    &__link {
+      color: $black;
+      display: block;
+      font-size: .87rem;
+      font-weight: bold;
+      margin: 1rem 0;
+      text-decoration: none;
+      width: 100%;
+    }
+    &__error-message {
+        color: $danger;
+        display: block;
+        font-size: .8rem;
+        margin: 1rem 0;
+    }
+
+    @include for-tablet-portrait-up {
+      width: calc(100% - 8rem);
+    }
+  }
+}

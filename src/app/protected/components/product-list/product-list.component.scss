@@ -1,0 +1,164 @@
+@import 'src/scss/vars';
+
+:host {
+  width: 100%;
+}
+
+.products-list {
+  header {
+    button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      transition: all .3s ease;
+      
+      i {
+        margin: 0 5px;
+        transition: all .3s ease;
+      }
+      &:hover {
+          color: $danger;
+          i {
+              color: $danger;
+          }
+      }
+    }
+  }
+
+  &__breadcrumb {
+    margin: 1rem 0 3rem;
+
+    p {
+      border-bottom: 2px solid $mainColor;
+      color: $gray;
+      display: block;
+      padding: 2px 5px;
+      width: max-content;
+    }
+  }
+
+  &__title {
+    margin: 2rem 0;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      line-height: 2rem;
+    }
+
+    p {
+      color: $gray;
+      font-size: .8rem;
+      line-height: 1.5rem;
+      font-weight: 300;
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+    display: block;
+
+    img {
+      transition: filter .3s ease-in-out;
+      margin: 1rem 0;
+
+    }
+    &:hover {
+        img {
+            animation: flip-scale 0.5s linear both;
+            filter: saturate(200%)
+        }
+    }
+
+    &__details {
+      max-width: initial;
+      text-align: center;
+      width: 100%;
+
+      h4 {
+        margin: .5rem 0;
+      }
+
+      small {
+        color: $gray;
+        display: block;
+        font-size: .75rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}
+
+.modal-product {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: rgba($color: #000000, $alpha: .8);
+  backdrop-filter: blur(10px);
+
+  &__wrap {
+    background-color: $white;
+    border-radius: 20px;
+    left: 50%;
+    padding: 2rem;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+
+    &::before {
+      content: url('../../../../assets/images/logo-login.png');
+      width: 30%;
+      height: auto;
+      position: absolute;
+      right: 10%;
+      transform: rotate(45deg);
+      filter: opacity(20%);
+    }
+  }
+
+  &__close {
+    cursor: pointer;
+    top: 20px;
+    right: 20px;
+    position: absolute;
+
+    i {
+      color: $mainColor;
+    }
+  }
+
+  &__header {
+    margin-bottom: 2rem;
+
+    h3 {
+      line-height: 2rem;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: .75rem;
+      color: $danger;
+    }
+
+    blockquote {
+      font-size: .85rem;
+      padding: 1rem 0;
+    }
+  }
+
+  &__products {
+      padding-left: 2rem;
+      li {
+        list-style: '🍕';
+        padding: .5rem 0;
+        p{
+            margin-left: 5px;
+        }
+    }
+  }
+}

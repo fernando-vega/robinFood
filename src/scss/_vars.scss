@@ -1,0 +1,106 @@
+/* Imports */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* color palette */
+
+$mainColor: #ffc444;
+$gray: #8d8c9c;
+$black: #211f25;
+$white: #FFFFFF;
+$danger: #d53a1a;
+
+$shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+0 1px 2px rgba(0, 0, 0, 0.24);
+$shadowHover: 0 14px 28px rgba(0, 0, 0, 0.25),
+0 10px 10px rgba(0, 0, 0, 0.22);
+
+/* fuentes */
+
+$mainFont: 'Roboto',
+sans-serif;
+
+$icomoon-font-family: "pizza" !default;
+
+$icon-user: "\e971";
+$icon-lock: "\e98f";
+$icon-cross: "\ea0f";
+$icon-exit: "\ea14";
+$icon-facebook: "\ea91";
+$icon-instagram: "\ea92";
+
+/* media queries */
+
+@mixin for-phone-only {
+  @media (max-width: 540px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: 960px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 1140px) {
+    @content;
+  }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+
+.row,
+.row>* {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes flip-scale {
+  0% {
+    transform: scale(1) rotateX(0);
+  }
+
+  50% {
+    transform: scale(0.4) rotateX(180deg);
+  }
+
+  100% {
+    transform: scale(1) rotateX(360deg);
+  }
+}
