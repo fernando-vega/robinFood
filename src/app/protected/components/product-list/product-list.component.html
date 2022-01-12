@@ -1,29 +1,38 @@
 <div class="products-list">
-    <header class="products-list__header">
-        <button (click)="logout()">{{ 'PRODUCT_LIST.LOGOUT' | translate }}</button>
+    <header class="products-list__header row end-xs">
+        <button class="row middle-xs" (click)="logout()"><i class="icon-exit"></i>{{ 'PRODUCT_LIST.LOGOUT' | translate }}</button>
     </header>
     
-    <section class="product-list__breadcrumb">{{ 'PRODUCT_LIST.BREADCRUMB' | translate }}</section>
-    <section class="product-list__title">
+    <section class="products-list__breadcrumb"><p>{{ 'PRODUCT_LIST.BREADCRUMB' | translate }}</p></section>
+    <section class="products-list__title">
         <h2>{{ 'PRODUCT_LIST.MAIN_TITLE' | translate }}</h2>
         <p>{{ 'PRODUCT_LIST.DESCRIPTION_SITE' | translate }}</p>
     </section>
     
-    <ul class="product-list__list" *ngFor="let store of stores">
-        <li class="product-list__list__item" (click)="openDetails(store.id)">
-            <img src="../../../../assets/images/stores/{{ store.image }}" alt="">
-            <h4>{{ store.name }}</h4>
-            <small>{{ store.address }}</small>
+    <ul class="products-list__list row">
+        <li class="products-list__item row center-xs col-xs-12 col-sm-6 col-md-4"
+           (click)="openDetails(store.id)"
+           *ngFor="let store of stores">
+            <img src="../../../../assets/images/stores/{{ store.image }}" loading="lazy" alt="{{ store.name }}">
+            <div class="products-list__item__details">
+                <h4>{{ store.name }}</h4>
+                <small>{{ store.address }}</small>
+            </div>
         </li>
     </ul>
 </div>
 
-<div id="modal-product" class="modal-product" *ngIf="modalVisible">
-    <span class="modal-product__close" (click)="closeModal()">X</span>
-    <section class="modal-product__wrap">
-        <header>{{ store.name }}</header>
-        <ul *ngFor="let product of store.products">
-            <li>{{ product.name }}</li>
+<div id="modal-product" class="modal-product" *ngIf="modalVisible" [@inOutAnimation]>
+    <div class="modal-product__wrap">
+        <span class="modal-product__close" (click)="closeModal()"><i class="icon-cross"></i></span>
+        <header class="modal-product__header">
+            <h3>{{ store.name }}</h3>
+            <p>{{ 'PRODUCT_LIST.ADDRESS' | translate }} | {{ store.address }}</p>
+            <blockquote>{{ store.description }}</blockquote>
+        </header>
+        <ul class="modal-product__products" *ngFor="let product of store.products">
+            <li><p>{{ product.name }}</p></li>
         </ul>
-    </section>
+    </div>
 </div>
+<app-footer></app-footer>
